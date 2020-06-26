@@ -1,0 +1,218 @@
+/* container змінити на 280px перед зливанням */
+
+body {
+  min-height: 100vh;
+}
+
+.account__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 297px;
+  height: 80px;
+  background-color: rgb(19, 31, 48);
+  box-shadow: 15px 0px 25px 0px rgba(29, 29, 27, 0.15);
+}
+
+.account-title {
+  font-family: 'MontserratRegular', sans-serif;
+  line-height: 26px;
+  font-size: 12px;
+  color: #ffffff;
+  transition: 0.5s;
+}
+
+.account-avatar {
+  width: 45px;
+  height: 45px;
+  margin-right: 20px;
+}
+
+.avatar {
+  width: 100%;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+}
+
+.account-title:hover {
+  cursor: pointer;
+  color: #ff6b08;
+}
+
+.avatar--hover:hover {
+  border: 2px solid #ff6b08;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.account-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.modal__icon--close::before {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  content: '';
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(./account-icons/close.svg);
+  cursor: pointer;
+}
+
+.avatar-in {
+  border: none;
+  box-shadow: 2px 1px 5px #9b9b99c0;
+}
+
+.user-avatar {
+  position: relative;
+  width: 85px;
+  height: 85px;
+  margin: 0 auto 15px;
+}
+
+.user-avatar::after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  content: '';
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0px 1px 5px #9b9b99c0;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.user-avatar:hover::after {
+  background-color: #ff6b08;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.avatar__icon--camera::after {
+  background-color: #114896;
+  background-image: url(./account-icons/camera.svg);
+}
+
+.modal-list {
+  margin: 0 18px;
+}
+
+.hr--line::after,
+.hr--line::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(133, 133, 133, 0.38);
+  margin-bottom: 20px;
+}
+
+.user-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.user-info__fullname,
+.user-info__mail,
+.user-info__phone {
+  line-height: 22px;
+  color: #333333;
+  letter-spacing: 0.29px;
+}
+
+.user-info__fullname {
+  font-family: 'MontserratSemiBold', sans-serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.user-info__mail,
+.user-info__phone {
+  font-family: 'MontserratRegular', sans-serif;
+  font-size: 14px;
+}
+
+.modal-list__cart,
+.modal-list__favorites,
+.modal-list__advertisement {
+  font-family: 'MontserratRegular', sans-serif;
+  font-size: 16px;
+  margin: 0 0 25px 16px;
+  padding-left: 40px;
+}
+
+.modal-list__cart:hover,
+.modal-list__favorites:hover,
+.modal-list__advertisement:hover,
+.modal-logout:hover {
+  color: #ff6b08;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.icon--cart,
+.icon--heart,
+.icon--add,
+.icon--logout {
+  line-height: 24px;
+  background-repeat: no-repeat;
+}
+
+.icon--cart {
+  background-image: url(./account-icons/add-cart.svg);
+}
+
+.icon--heart {
+  background-image: url(./account-icons/heart.svg);
+}
+
+.icon--add {
+  background-image: url(./account-icons/file-add.svg);
+}
+
+.icon--logout {
+  background-image: url(./account-icons/logout.svg);
+}
+
+.counter {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 20px;
+  color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px #9b9b99c0;
+  background-color: #ff6b08;
+  margin-left: 10px;
+}
+
+.modal-logout {
+  font-family: 'MontserratSemiBold', sans-serif;
+  font-size: 16px;
+  margin-left: 35px;
+  padding-left: 40px;
+}

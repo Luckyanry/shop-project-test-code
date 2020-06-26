@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Webpack Starter Kit</title>
 
-    <!-- Don't forget to delete this style tag. -->
-    <style>
-      body {
-        min-height: 100vh;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Webpack Starter Kit</title>
+</head>
 
-      .intro {
-        text-align: center;
-      }
+<body>
+  <header class="header">
 
-      .intro h1 {
-        margin-top: 0;
-        font-weight: 500;
-        font-size: 40px;
-      }
+    <div class="account__wrapper">
+      <div class="account-avatar">
+        <img class="avatar avatar--hover" src="https://i.ibb.co/hWhKbPf/team-4.jpg" alt="Photo of Lucas Marsha"
+          width="45" height="45">
+      </div>
+      <span class="account-title">Мой кабинет</span>
+    </div>
+    <div class="modal-backdrop">
+      <div class="account-modal modal__icon--close">
+        <div class="user-avatar avatar__icon--camera">
+          <img class="avatar avatar-in" src="https://i.ibb.co/hWhKbPf/team-4.jpg" alt="Photo of Alina Popovich"
+            width="80" height="80">
+        </div>
 
-      .intro img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-      }
-    </style>
-  </head>
+        <ul class="user-info">
+          <li class="user-info__fullname">Alina Popovich</li>
+          <li class="user-info__mail">alinapopovich@gmail.com</li>
+          <li class="user-info__phone">+38 (063) 123-45-67</li>
+        </ul>
 
-  <body>
-    <article class="intro">
-      <h1>Webpack starter kit</h1>
+        <ul class="modal-list hr--line">
+          <li class="modal-list__cart icon--cart">Корзина
+            <span class="js-counter__cart counter">0</span>
+          </li>
+          <li class="modal-list__favorites icon--heart">Избранное
+            <span class="js-counter__heart counter">0</span>
+          </li>
+          <li class="modal-list__advertisement icon--add">Мои обьявления
+            <span class="js-counter__add counter">1</span>
+          </li>
+        </ul>
+        <span class="modal-logout icon--logout">Выйти</span>
+      </div>
+    </div>
+  </header>
+</body>
 
-      <!-- HTML image reference example. -->
-      <img src="./images/intro.png" alt="" width="640" />
-    </article>
-  </body>
 </html>
