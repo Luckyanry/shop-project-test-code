@@ -17,8 +17,8 @@ body {
 
 .account-title {
   font-family: 'MontserratRegular', sans-serif;
-  line-height: 26px;
   font-size: 12px;
+  line-height: 26px;
   color: #ffffff;
   transition: 0.4s;
   height: max-content;
@@ -237,3 +237,100 @@ body {
 }
 
 /* MODAL OF ACCAUNT FAVORITE GOODS */
+
+.selected-goods__inner {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  background-color: #ffffff;
+  padding-top: 40px;
+}
+
+.selected-goods {
+  width: 240px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.selected-goods__title {
+  font-family: 'MontserratBold', sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+  color: #333333;
+  padding-left: 40px;
+  margin-bottom: 20px;
+}
+
+.selected-goods__list {
+  height: 100%;
+  overflow: auto;
+}
+
+.selected-goods__item {
+  position: relative;
+  height: 270px;
+  border-radius: 5px;
+  border: 1px solid #e7e9ee;
+  box-shadow: inset -1px -1px 0px 0px #cecece;
+  margin-bottom: 20px;
+}
+
+.selected-goods__item-img {
+  display: block;
+  width: 220px;
+  height: 180px;
+  object-fit: fill;
+  margin: 0 auto 20px;
+  padding-top: 10px;
+}
+
+.selected-goods__item-title,
+.selected-goods__item-price {
+  font-family: 'MontserratBold', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.selected-goods__item-title {
+  text-align: center;
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+.selected-goods__item-price {
+  color: #e96105;
+  padding-left: 20px;
+}
+
+.selected-goods__icon-text {
+  display: none;
+  font-family: 'MontserratLight', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #878686;
+  margin-left: 30px;
+}
+
+.selected-goods__item-icon::after {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  content: '';
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(./account-icons/heart-on--hover.svg);
+  cursor: pointer;
+}
+
+.selected-goods__item-icon:hover::after {
+  background-image: url(./account-icons/heart-out--hover.svg);
+}
+
+.selected-goods__item-icon:hover .selected-goods__icon-text {
+  display: inline-block;
+}
