@@ -7,11 +7,12 @@ body {
 .account__wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 297px;
-  height: 80px;
+  /* align-items: center; */
+  width: 100%;
+  height: 170px;
   background-color: rgb(19, 31, 48);
   box-shadow: 15px 0px 25px 0px rgba(29, 29, 27, 0.15);
+  padding-top: 35px; /*для макета*/
 }
 
 .account-title {
@@ -19,12 +20,14 @@ body {
   line-height: 26px;
   font-size: 12px;
   color: #ffffff;
-  transition: 0.5s;
+  transition: 0.4s;
+  height: max-content;
+  margin-top: 10px; /*для макета*/
 }
 
 .account-avatar {
-  width: 45px;
-  height: 45px;
+  width: 44px;
+  height: 44px;
   margin-right: 20px;
 }
 
@@ -41,7 +44,7 @@ body {
 
 .avatar--hover:hover {
   border: 2px solid #ff6b08;
-  transition: 0.5s;
+  transition: 0.4s;
   cursor: pointer;
 }
 
@@ -54,7 +57,9 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.account-modal {
+/* MODAL OF USER ACCOUNT */
+
+.account-wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -106,7 +111,7 @@ body {
 
 .user-avatar:hover::after {
   background-color: #ff6b08;
-  transition: 0.5s;
+  transition: 0.4s;
   cursor: pointer;
 }
 
@@ -115,7 +120,7 @@ body {
   background-image: url(./account-icons/camera.svg);
 }
 
-.modal-list {
+.account-list {
   margin: 0 18px;
 }
 
@@ -154,38 +159,36 @@ body {
   font-size: 14px;
 }
 
-.modal-list__cart,
-.modal-list__favorites,
-.modal-list__advertisement {
+.account-list__favorites,
+.account-list__advertisement {
   font-family: 'MontserratRegular', sans-serif;
   font-size: 16px;
   margin: 0 0 25px 16px;
   padding-left: 40px;
 }
 
-.modal-list__cart:hover,
-.modal-list__favorites:hover,
-.modal-list__advertisement:hover,
-.modal-logout:hover {
+.account-list__favorites:hover,
+.account-list__advertisement:hover,
+.account-logout:hover {
   color: #ff6b08;
   cursor: pointer;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
-.icon--cart,
 .icon--heart,
+.icon--heart-on,
 .icon--add,
 .icon--logout {
   line-height: 24px;
   background-repeat: no-repeat;
 }
 
-.icon--cart {
-  background-image: url(./account-icons/add-cart.svg);
+.icon--heart {
+  background-image: url(./account-icons/heart-out.svg);
 }
 
-.icon--heart {
-  background-image: url(./account-icons/heart.svg);
+.icon--heart-on {
+  background-image: url(./account-icons/heart-on--hover.svg);
 }
 
 .icon--add {
@@ -194,6 +197,22 @@ body {
 
 .icon--logout {
   background-image: url(./account-icons/logout.svg);
+}
+
+.icon--heart:hover {
+  background-image: url(./account-icons/heart-out--hover.svg);
+}
+
+/* .icon--heart-on:hover {
+  background-image: url(./account-icons/heart-on--hover.svg);
+} */
+
+.icon--add:hover {
+  background-image: url(./account-icons/file-add--hover.svg);
+}
+
+.icon--logout:hover {
+  background-image: url(./account-icons/logout--hover.svg);
 }
 
 .counter {
@@ -210,9 +229,11 @@ body {
   margin-left: 10px;
 }
 
-.modal-logout {
+.account-logout {
   font-family: 'MontserratSemiBold', sans-serif;
   font-size: 16px;
   margin-left: 35px;
   padding-left: 40px;
 }
+
+/* MODAL OF ACCAUNT FAVORITE GOODS */
