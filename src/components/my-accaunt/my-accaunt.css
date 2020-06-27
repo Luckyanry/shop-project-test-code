@@ -178,6 +178,7 @@ body {
 .icon--heart,
 .icon--heart-on,
 .icon--add,
+.icon--pencil-on,
 .icon--logout {
   line-height: 24px;
   background-repeat: no-repeat;
@@ -192,23 +193,23 @@ body {
 }
 
 .icon--add {
-  background-image: url(./account-icons/file-add.svg);
+  background-image: url(./account-icons/pencil.svg);
 }
 
 .icon--logout {
   background-image: url(./account-icons/logout.svg);
 }
 
+.icon--pencil-on {
+  background-image: url(./account-icons/pencil--hover.svg);
+}
+
 .icon--heart:hover {
   background-image: url(./account-icons/heart-out--hover.svg);
 }
 
-/* .icon--heart-on:hover {
-  background-image: url(./account-icons/heart-on--hover.svg);
-} */
-
 .icon--add:hover {
-  background-image: url(./account-icons/file-add--hover.svg);
+  background-image: url(./account-icons/pencil--hover.svg);
 }
 
 .icon--logout:hover {
@@ -236,101 +237,133 @@ body {
   padding-left: 40px;
 }
 
-/* MODAL OF ACCAUNT FAVORITE GOODS */
+/* MODAL OF ACCAUNT FAVORITE GOODS AND MY ADS (advertisement) */
 
-.selected-goods__inner {
+.selected-goods__inner,
+.my-ads__inner {
   position: absolute;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
   width: 280px;
+  height: 100vh;
+  overflow: auto;
   background-color: #ffffff;
-  padding-top: 40px;
+  padding: 40px 0 20px;
 }
 
-.selected-goods {
+.selected-goods,
+.my-ads {
   width: 240px;
-  height: 100vh;
   margin: 0 auto;
 }
 
-.selected-goods__title {
+.selected-goods__title,
+.my-ads__title {
   font-family: 'MontserratBold', sans-serif;
   font-size: 18px;
-  line-height: 20px;
+  line-height: 24px;
   color: #333333;
   padding-left: 40px;
   margin-bottom: 20px;
 }
 
-.selected-goods__list {
-  height: 100%;
-  overflow: auto;
-}
-
-.selected-goods__item {
+.selected-goods__item,
+.my-ads__item {
   position: relative;
-  height: 270px;
-  border-radius: 5px;
-  border: 1px solid #e7e9ee;
-  box-shadow: inset -1px -1px 0px 0px #cecece;
+  width: 240px;
+  height: 100%;
+  box-shadow: 1px 1px 8px -2px #cecece;
   margin-bottom: 20px;
+  padding-bottom: 15px;
 }
 
-.selected-goods__item-img {
+.selected-goods__item:hover,
+.my-ads__item:hover {
+  transform: scale(1.03);
+  transition: 0.5s;
+  box-shadow: 0px 0px 8px 0px #cecece;
+  cursor: pointer;
+}
+
+.selected-goods__item-img,
+.my-ads__item-img {
   display: block;
   width: 220px;
   height: 180px;
-  object-fit: fill;
+  object-fit: contain;
   margin: 0 auto 20px;
   padding-top: 10px;
 }
 
 .selected-goods__item-title,
-.selected-goods__item-price {
+.selected-goods__item-price,
+.my-ads__item-title,
+.my-ads__item-price {
   font-family: 'MontserratBold', sans-serif;
   font-size: 14px;
   line-height: 20px;
 }
 
-.selected-goods__item-title {
+.selected-goods__item-title,
+.my-ads__item-title {
   text-align: center;
   text-transform: uppercase;
   color: #000000;
   margin-bottom: 15px;
+  padding: 0 20px;
 }
 
-.selected-goods__item-price {
+.selected-goods__item-price,
+.my-ads__item-price {
   color: #e96105;
   padding-left: 20px;
 }
 
-.selected-goods__icon-text {
+.selected-goods__icon-text,
+.my-ads__icon-text {
   display: none;
+  position: absolute;
+  right: 45px;
   font-family: 'MontserratLight', sans-serif;
   font-size: 14px;
   line-height: 20px;
   color: #878686;
-  margin-left: 30px;
 }
 
-.selected-goods__item-icon::after {
+.selected-goods__item-icon::after,
+.my-ads__item-icon::after {
   position: absolute;
-  bottom: 10px;
+
   right: 15px;
   content: '';
   width: 25px;
   height: 25px;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(./account-icons/heart-on--hover.svg);
   cursor: pointer;
+}
+
+.selected-goods__item-icon::after {
+  bottom: 10px;
+  background-image: url(./account-icons/heart-on--hover.svg);
+}
+.my-ads__item-icon::after {
+  bottom: 14px;
+  background-image: url(./account-icons/pencil--hover.svg);
 }
 
 .selected-goods__item-icon:hover::after {
   background-image: url(./account-icons/heart-out--hover.svg);
+  transition: 0.5s;
 }
 
-.selected-goods__item-icon:hover .selected-goods__icon-text {
+.my-ads__item-icon:hover::after {
+  background-image: url(./account-icons/delete.svg);
+  transition: 0.4s;
+}
+
+.selected-goods__item-icon:hover .selected-goods__icon-text,
+.my-ads__item-icon:hover .my-ads__icon-text {
   display: inline-block;
 }
