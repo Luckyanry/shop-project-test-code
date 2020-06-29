@@ -1,5 +1,17 @@
 /* container змінити на 280px перед зливанням */
 
+@keyframes modal-backdrop {
+  from {
+    opacity: 0;
+    top: 0%;
+  }
+
+  to {
+    opacity: 1;
+    top: 50%;
+  }
+}
+
 body {
   min-height: 100vh;
 }
@@ -43,6 +55,8 @@ body {
 
 .avatar {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 50%;
   border: 2px solid #ffffff;
   transition: 0.4s;
@@ -50,12 +64,12 @@ body {
 
 .account-btn:hover {
   cursor: pointer;
+  transition: 0.4s;
 }
 
 .account-btn:hover .account-title,
 .account-btn:hover .avatar--hover {
   color: #ff6b08;
-  transition: 0.4s;
 }
 
 .account-btn:hover .avatar--hover {
@@ -76,6 +90,7 @@ body {
 /* MODAL WINDOW */
 
 .modal-backdrop {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -93,11 +108,13 @@ body {
   transform: translate(-50%, -50%);
   width: 280px;
   background-color: #ffffff;
+  animation-name: modal-backdrop;
+  animation-duration: 0.5s;
   margin: 0 auto;
   padding: 40px 0 20px;
 }
 
-.modal__icon--close::before {
+.modal__icon--close {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -110,9 +127,18 @@ body {
   cursor: pointer;
 }
 
-.avatar-in {
+.modal__icon--close:hover {
+  background-image: url(./account-icons/close--hover.svg);
+  transition: 0.4s;
+}
+
+/* .avatar-in {
   border: none;
   box-shadow: 2px 1px 5px #9b9b99c0;
+} */
+
+.user-avatar__file-input {
+  display: none;
 }
 
 .user-avatar {
@@ -142,24 +168,10 @@ body {
   cursor: pointer;
 }
 
-.avatar__icon--camera::after {
+/* .avatar__icon--camera::after {
   background-color: #114896;
   background-image: url(./account-icons/camera.svg);
-}
-
-.account-list {
-  margin: 0 18px;
-}
-
-.hr--line::after,
-.hr--line::before {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 1px;
-  background-color: rgba(133, 133, 133, 0.38);
-  margin-bottom: 20px;
-}
+} */
 
 .user-info {
   text-align: center;
@@ -184,6 +196,20 @@ body {
 .user-info__phone {
   font-family: 'MontserratRegular', sans-serif;
   font-size: 14px;
+}
+
+.hr--line::after,
+.hr--line::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(133, 133, 133, 0.38);
+  margin-bottom: 20px;
+}
+
+.account-list {
+  margin: 0 18px;
 }
 
 .account-list__favorites,
@@ -258,6 +284,7 @@ body {
   color: #333333;
   border-radius: 50%;
   box-shadow: 1px 1px 3px #9b9b99c0;
+  transition: 0.4s;
 }
 
 .icon--heart:hover .counter,

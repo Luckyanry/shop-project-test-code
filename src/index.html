@@ -15,18 +15,37 @@
       <button class="account-btn">
         <div class="account-avatar">
           <img class="avatar avatar--hover" src="https://i.ibb.co/hWhKbPf/team-4.jpg" alt="Photo of Lucas Marsha"
-            width="45" height="45">
+            width="44" height="44">
         </div>
         <span class="account-title">Мой кабинет</span>
       </button>
     </div>
 
+    <!-- <form name="fileForm">
+      <input type="file" name="fileFormInput">
+      <button type="submit">Загрузить</button>
+    </form> -->
+
     <div class="modal-backdrop">
       <div class="account-wrapper">
         <span id="cross" class="modal__icon--close"></span>
-        <div class="user-avatar avatar__icon--camera">
+        <!-- <div class="user-avatar avatar__icon--camera">
           <img class="avatar avatar-in" src="https://i.ibb.co/hWhKbPf/team-4.jpg" alt="Photo of Alina Popovich"
-            width="80" height="80">
+            width="85" height="85">
+        </div> -->
+
+        <!-- <form name="fileForm">
+          <input type="file" name="fileFormInput">
+          <button type="submit">Загрузить</button>
+        </form> -->
+
+        <div class="user-avatar fileForm">
+          <input class="user-avatar__file-input" type="file" name="fileFormInput" id="file-reader">
+          <img class="js-avatar avatar" src="https://i.ibb.co/hWhKbPf/team-4.jpg" alt="Photo of Alina Popovich"
+            width="85" height="85">
+
+          <button type="submit"><label class="user-avatar__input-label" for="file-reader">Load</label></button>
+          <button type="reset"><label class="user-avatar__input-label" for="file-reader">Clear</label></button>
         </div>
 
         <ul class="user-info">
