@@ -4,25 +4,35 @@ body {
   min-height: 100vh;
 }
 
-.account__wrapper {
+.account-menu__wrapper {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center;
   width: 100%;
-  height: 170px;
+  height: 80px;
   background-color: rgb(19, 31, 48);
   box-shadow: 15px 0px 25px 0px rgba(29, 29, 27, 0.15);
-  padding-top: 35px; /*для макета*/
+}
+
+.account-btn {
+  position: relative;
+  width: 180px;
+  height: max-content;
+  border: none;
+  background-color: transparent;
+  outline: none;
 }
 
 .account-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-30%, -50%);
   font-family: 'MontserratRegular', sans-serif;
   font-size: 12px;
-  line-height: 26px;
   color: #ffffff;
   transition: 0.4s;
   height: max-content;
-  margin-top: 10px; /*для макета*/
 }
 
 .account-avatar {
@@ -35,18 +45,35 @@ body {
   width: 100%;
   border-radius: 50%;
   border: 2px solid #ffffff;
+  transition: 0.4s;
 }
 
-.account-title:hover {
+.account-btn:hover {
+  cursor: pointer;
+}
+
+.account-btn:hover .account-title,
+.account-btn:hover .avatar--hover {
+  color: #ff6b08;
+  transition: 0.4s;
+}
+
+.account-btn:hover .avatar--hover {
+  border: 2px solid #ff6b08;
+}
+
+/* .account-title:hover {
   cursor: pointer;
   color: #ff6b08;
-}
+} */
 
-.avatar--hover:hover {
+/* .avatar--hover:hover {
   border: 2px solid #ff6b08;
   transition: 0.4s;
   cursor: pointer;
-}
+} */
+
+/* MODAL WINDOW */
 
 .modal-backdrop {
   position: fixed;
@@ -228,11 +255,15 @@ body {
   font-size: 12px;
   text-align: center;
   line-height: 20px;
-  /* color: #ffffff; */
   color: #333333;
   border-radius: 50%;
   box-shadow: 1px 1px 3px #9b9b99c0;
-  /* background-color: #ff6b08; */
+}
+
+.icon--heart:hover .counter,
+.icon--add:hover .counter {
+  background-color: #ff6b08;
+  color: #ffffff;
 }
 
 .account-logout {
