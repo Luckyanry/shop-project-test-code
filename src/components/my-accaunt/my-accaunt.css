@@ -1,16 +1,8 @@
-/* container змінити на 280px перед зливанням */
-
-@keyframes modal-backdrop {
-  from {
-    opacity: 0;
-    top: 0%;
-  }
-
-  to {
-    opacity: 1;
-    top: 50%;
-  }
-}
+/*
+    container змінити на 280px перед зливанням
+    додати: npm install animate.css --save
+    import 'animate.css'; (https://animate.style/)
+*/
 
 body {
   min-height: 100vh;
@@ -22,8 +14,7 @@ body {
   align-items: center;
   width: 100%;
   height: 80px;
-  background-color: rgb(19, 31, 48);
-  box-shadow: 15px 0px 25px 0px rgba(29, 29, 27, 0.15);
+  background-color: #131f30;
 }
 
 .account-btn {
@@ -32,7 +23,7 @@ body {
   height: max-content;
   border: none;
   background-color: transparent;
-  outline: none;
+  /* outline: none; */
 }
 
 .account-title {
@@ -40,11 +31,11 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-30%, -50%);
+  height: max-content;
   font-family: 'MontserratRegular', sans-serif;
   font-size: 12px;
   color: #ffffff;
-  transition: 0.4s;
-  height: max-content;
+  transition: color 0.4s ease-in-out;
 }
 
 .account-avatar {
@@ -59,12 +50,16 @@ body {
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid #ffffff;
-  transition: 0.4s;
+  transition: border 0.4s ease-in-out;
+}
+
+.avatar-shadow {
+  border: 1px solid #ffffff;
+  box-shadow: 2px 1px 5px #9b9b99c0;
 }
 
 .account-btn:hover {
   cursor: pointer;
-  transition: 0.4s;
 }
 
 .account-btn:hover .account-title,
@@ -76,41 +71,28 @@ body {
   border: 2px solid #ff6b08;
 }
 
-/* .account-title:hover {
-  cursor: pointer;
-  color: #ff6b08;
-} */
-
-/* .avatar--hover:hover {
-  border: 2px solid #ff6b08;
-  transition: 0.4s;
-  cursor: pointer;
-} */
-
 /* MODAL WINDOW */
 
-.modal-backdrop {
+.modal-backdrop,
+.modal-backdrop__bg-color {
   display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.modal-backdrop__bg-color {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
 /* MODAL OF USER ACCOUNT */
 
 .account-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   width: 280px;
   background-color: #ffffff;
-  animation-name: modal-backdrop;
-  animation-duration: 0.5s;
-  margin: 0 auto;
   padding: 40px 0 20px;
 }
 
@@ -125,17 +107,12 @@ body {
   background-position: center;
   background-image: url(./account-icons/close.svg);
   cursor: pointer;
+  transition: 0.4s ease-in-out;
 }
 
 .modal__icon--close:hover {
   background-image: url(./account-icons/close--hover.svg);
-  transition: 0.4s;
 }
-
-/* .avatar-in {
-  border: none;
-  box-shadow: 2px 1px 5px #9b9b99c0;
-} */
 
 .user-avatar__file-input {
   display: none;
@@ -148,30 +125,63 @@ body {
   margin: 0 auto 15px;
 }
 
-.user-avatar::after {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  content: '';
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  border: 2px solid #ffffff;
-  box-shadow: 0px 1px 5px #9b9b99c0;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.user-avatar:hover::after {
-  background-color: #ff6b08;
-  transition: 0.4s;
+.user-avatar:hover .user-avatar__add-btn,
+.user-avatar:hover .user-avatar__clear-btn {
+  display: block;
   cursor: pointer;
 }
 
-/* .avatar__icon--camera::after {
-  background-color: #114896;
+.user-avatar__add-btn,
+.user-avatar__clear-btn {
+  display: none;
+  position: absolute;
+  top: 80%;
+  content: '';
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  box-shadow: 2px 2px 6px -2px #9b9b99c0;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.user-avatar__add-btn {
+  right: -15%;
+  transform: translate(50%, -50%);
+}
+
+.user-avatar__clear-btn {
+  left: -15%;
+  transform: translate(-50%, -50%);
+}
+
+.avatar__icon--camera__add {
+  background-color: #10bf86;
   background-image: url(./account-icons/camera.svg);
-} */
+}
+
+.avatar__icon--camera__clear {
+  background-color: #fb4d19;
+  background-image: url(./account-icons/camera-off.svg);
+}
+
+.avatar__icon--camera__add:hover,
+.avatar__icon--camera__clear:hover {
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.avatar__icon--camera__add:hover {
+  border: 1px solid #10bf86;
+  background-image: url(./account-icons/camera--hover.svg);
+}
+
+.avatar__icon--camera__clear:hover {
+  border: 1px solid #fb4d19;
+  background-image: url(./account-icons/camera-off--hover.svg);
+}
 
 .user-info {
   text-align: center;
@@ -219,6 +229,7 @@ body {
   line-height: 24px;
   margin: 0 0 25px 16px;
   padding-left: 40px;
+  transition: all 0.4s ease-in-out;
 }
 
 .account-list__favorites:hover,
@@ -226,7 +237,6 @@ body {
 .account-logout:hover {
   color: #ff6b08;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 .icon--heart,
@@ -284,7 +294,7 @@ body {
   color: #333333;
   border-radius: 50%;
   box-shadow: 1px 1px 3px #9b9b99c0;
-  transition: 0.4s;
+  transition: 0.4s ease-in-out;
 }
 
 .icon--heart:hover .counter,
@@ -298,6 +308,7 @@ body {
   font-size: 16px;
   margin-left: 35px;
   padding-left: 40px;
+  transition: 0.4s ease-in-out;
 }
 
 /* MODAL OF ACCAUNT FAVORITE GOODS AND MY ADS (advertisement) */
@@ -343,12 +354,12 @@ body {
   height: 100%;
   box-shadow: 0px 0px 6px -2px #cecece;
   margin-bottom: 20px;
+  transition: 0.6s ease-in-out;
 }
 
 .selected-goods__item:hover,
 .my-ads__item:hover {
   transform: scale(1.03);
-  transition: 0.5s;
   box-shadow: 2px 2px 6px -1px #d1d1d1;
   cursor: pointer;
 }
@@ -395,11 +406,12 @@ body {
 .my-ads__icon-text {
   display: none;
   position: absolute;
-  right: 45px;
-  bottom: 15px;
+  right: 30px;
+  bottom: 0;
+  width: max-content;
   font-family: 'MontserratLight', sans-serif;
   font-size: 12px;
-  line-height: 20px;
+  line-height: 24px;
   color: #878686;
 }
 
@@ -407,8 +419,8 @@ body {
   display: none;
 }
 
-.selected-goods__item-icon::after,
-.my-ads__item-icon::after {
+.selected-goods__item-icon,
+.my-ads__item-icon {
   position: absolute;
   right: 15px;
   bottom: 14px;
@@ -418,30 +430,39 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+  transition: all 0.4s ease-in-out;
 }
 
-.selected-goods__item-icon::after {
+.selected-goods__item-icon {
   background-image: url(./account-icons/heart-on--hover.svg);
 }
-.my-ads__item-icon::after {
+.my-ads__item-icon {
   background-image: url(./account-icons/delete.svg);
 }
 
-.selected-goods__item-icon:hover::after {
+.selected-goods__item-icon:hover {
   background-image: url(./account-icons/heart-out--hover.svg);
-  transition: 0.5s;
 }
 
-.my-ads__item-icon:hover::after {
+.my-ads__item-icon:hover {
   background-image: url(./account-icons/delete-forever.svg);
-  transition: 0.4s;
 }
 
 .selected-goods__item-icon:hover .selected-goods__icon-text,
 .my-ads__item-icon:hover .my-ads__icon-text {
   display: inline-block;
 }
+
 @media (max-width: 767px) {
+  .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .account-wrapper {
+    top: 12%;
+    margin: 0 auto;
+  }
+
   .selected-goods__inner,
   .my-ads__inner {
     padding: 40px 0 20px;
@@ -459,6 +480,17 @@ body {
 }
 
 @media (min-width: 768px) {
+  .account-menu__wrapper {
+    justify-content: flex-end;
+    height: 112px;
+  }
+
+  .account-wrapper {
+    top: 34px;
+    left: 320px;
+    box-shadow: 1px 1px 6px -2px #c0c0c0;
+  }
+
   .selected-goods__inner,
   .my-ads__inner {
     top: 50%;
@@ -507,22 +539,25 @@ body {
 
   .selected-goods__icon-text,
   .my-ads__icon-text {
-    right: 50px;
-    bottom: 14px;
+    right: 35px;
   }
 
   .selected-goods__icon-text--hidden {
     display: inline-block;
   }
 
-  .selected-goods__item-icon::after,
-  .my-ads__item-icon::after {
+  .selected-goods__item-icon,
+  .my-ads__item-icon {
     right: 18px;
     bottom: 12px;
   }
 }
 
 @media (min-width: 1024px) {
+  .account-wrapper {
+    left: 500px;
+  }
+
   .selected-goods__inner,
   .my-ads__inner {
     width: 940px;
@@ -566,8 +601,8 @@ body {
 
   .selected-goods__icon-text,
   .my-ads__icon-text {
-    right: 70px;
-    bottom: 20px;
+    /* right: 70px;
+    bottom: 20px; */
     font-size: 13px;
   }
 
@@ -575,8 +610,8 @@ body {
     display: inline-block;
   }
 
-  .selected-goods__item-icon::after,
-  .my-ads__item-icon::after {
+  .selected-goods__item-icon,
+  .my-ads__item-icon {
     right: 38px;
     bottom: 18px;
   }

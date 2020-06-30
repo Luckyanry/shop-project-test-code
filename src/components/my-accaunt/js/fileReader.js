@@ -1,24 +1,26 @@
-const refs = {
-  // fileForm: document.forms.fileForm,
-  input: document.querySelector('.user-avatar__file-input'),
-  img: document.querySelector('.js-avatar'),
-};
+// const refs = {
+//   // fileForm: document.forms.fileForm,
+//   input: document.querySelector('.user-avatar__file-input'),
+//   img: document.querySelector('.js-avatar'),
+// };
 
-function hendleChange(e) {
-  const file = e.target.files[0];
-  const reader = new FileReader();
+// function hendleChange(e) {
+//   const file = e.target.files[0];
+//   const reader = new FileReader();
 
-  reader.onloadend = () => {
-    refs.img.src = reader.result;
-  };
-  if (file) {
-    reader.readAsDataURL(file);
-  } else {
-    refs.img.src = '';
-  }
-}
+//   console.log(file);
 
-refs.input.addEventListener('change', hendleChange);
+//   reader.onloadend = () => {
+//     refs.img.src = reader.result;
+//   };
+//   if (file) {
+//     reader.readAsDataURL(file);
+//   } else {
+//     refs.img.src = '';
+//   }
+// }
+
+// refs.input.addEventListener('change', hendleChange);
 
 // const fileForm = document.forms.fileForm;
 
