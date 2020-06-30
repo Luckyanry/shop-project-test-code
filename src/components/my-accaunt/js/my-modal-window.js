@@ -19,7 +19,7 @@ const refs = {
   selectedGoodsInner: document.querySelector('.selected-goods__inner'),
   myAdsInner: document.querySelector('.my-ads__inner'),
 };
-
+console.dir(refs.modalBackdropMyAccount.firstElementChild);
 // ===================OPEN MODAL ON BTN=======================
 
 refs.btnOpenModal.addEventListener('click', btnOpenModal);
