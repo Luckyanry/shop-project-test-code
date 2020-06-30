@@ -314,14 +314,11 @@
 
 .selected-goods__inner,
 .my-ads__inner {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
   width: 280px;
   height: 100vh;
   overflow: auto;
   background-color: #ffffff;
+  margin: 5% auto 0;
 }
 
 .selected-goods,
@@ -502,9 +499,6 @@
 
   .selected-goods__inner,
   .my-ads__inner {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 720px;
     height: 680px;
     padding-top: 50px;

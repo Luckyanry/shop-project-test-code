@@ -1,4 +1,4 @@
-import './components/my-accaunt/my-accaunt.js';
+import './components/my-accaunt/js/my-accaunt';
 import './logic-modal.js';
 import './css/main.css';
 
