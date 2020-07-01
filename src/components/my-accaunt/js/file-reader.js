@@ -1,11 +1,5 @@
-const refs = {
-  // fileForm: document.forms.fileForm,
-  fileInput: document.querySelector('.user-avatar__file-input'),
-  avatarImg: document.querySelectorAll('.js-avatar'),
-  addAvatarBtn: document.querySelector('.user-avatar__add-btn'),
-  clearAvatarBtn: document.querySelector('.user-avatar__clear-btn'),
-};
-console.log('avatarImg', refs.avatarImg);
+import { refs } from './refs';
+
 refs.fileInput.addEventListener('change', hendleChange);
 refs.clearAvatarBtn.addEventListener('click', resetForDefault);
 
@@ -14,7 +8,7 @@ function hendleChange(e) {
   const reader = new FileReader();
 
   reader.onloadend = () => {
-    refs.avatarImg.forEach(num => (num.src = reader.result));
+    refs.avatarImg.forEach(img => (img.src = reader.result));
   };
 
   file ? reader.readAsDataURL(file) : (refs.avatarImg.src = '');
@@ -22,7 +16,7 @@ function hendleChange(e) {
 
 function resetForDefault() {
   const srcDefault = './components/my-accaunt/avatar-img/default.png';
-  refs.avatarImg.forEach(num => (num.src = srcDefault));
+  refs.avatarImg.forEach(img => (img.src = srcDefault));
 }
 
 // =======================LOCALSTORAGE=======================

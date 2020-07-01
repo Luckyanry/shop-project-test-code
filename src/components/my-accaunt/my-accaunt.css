@@ -72,8 +72,7 @@
 
 /* MODAL WINDOW */
 
-.modal-backdrop,
-.modal-backdrop__bg-color {
+.modal-backdrop {
   display: none;
   position: fixed;
   top: 0;
@@ -82,8 +81,10 @@
   height: 100%;
 }
 
-.modal-backdrop__bg-color {
+.moodal-backdrop__favorites,
+.moodal-backdrop__my-ads {
   background-color: rgba(0, 0, 0, 0.3);
+  padding-top: 20px;
 }
 
 /* MODAL OF USER ACCOUNT */
@@ -315,10 +316,10 @@
 .selected-goods__inner,
 .my-ads__inner {
   width: 280px;
-  height: 100vh;
+  height: 715px;
   overflow: auto;
   background-color: #ffffff;
-  margin: 5% auto 0;
+  margin: 0 auto;
 }
 
 .selected-goods,
@@ -461,7 +462,7 @@
 
   .selected-goods__inner,
   .my-ads__inner {
-    padding: 40px 0 20px;
+    padding-top: 40px;
   }
 
   .selected-goods__item,
@@ -483,7 +484,6 @@
 
   .account-btn {
     width: max-content;
-    top: 34px;
     left: 80%;
   }
 
@@ -564,7 +564,7 @@
   .selected-goods__inner,
   .my-ads__inner {
     width: 940px;
-    height: 650px;
+    height: 775px;
     padding-top: 60px;
   }
 

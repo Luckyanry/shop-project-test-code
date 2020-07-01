@@ -1,25 +1,13 @@
-const refs = {
-  btnOpenModal: document.querySelector('.account-btn'),
-  openFavorites: document.querySelector('.account-list__favorites'),
-  openMyAds: document.querySelector('.account-list__advertisement'),
+import { refs } from './refs';
+import {
+  animationOpenModal,
+  animationCloseModal,
+  animationOpenFavorites,
+  animationCloseFavorites,
+  animationOpenMyAds,
+  animationCloseMyAds,
+} from './account-animation.js';
 
-  modalBackdropMyAccount: document.querySelector(
-    '.moodal-backdrop__my-account',
-  ),
-  modalBackdropFavorites: document.querySelector('.moodal-backdrop__favorites'),
-  modalBackdropMyAds: document.querySelector('.moodal-backdrop__my-ads'),
-
-  closeBtnAccount: document.querySelector('.close__my-account'),
-  closeBtnFavorites: document.querySelector('.close__favorites'),
-  closeBtnMyAds: document.querySelector('.close__my-ads'),
-
-  logoutAccount: document.querySelector('.account-logout'),
-
-  accountWrapper: document.querySelector('.account-wrapper'),
-  selectedGoodsInner: document.querySelector('.selected-goods__inner'),
-  myAdsInner: document.querySelector('.my-ads__inner'),
-};
-console.dir(refs.modalBackdropMyAccount.firstElementChild);
 // ===================OPEN MODAL ON BTN=======================
 
 refs.btnOpenModal.addEventListener('click', btnOpenModal);
@@ -43,7 +31,7 @@ function openMyAds() {
   animationOpenMyAds();
 }
 
-// ===================CLOSE WHEN CLICK ARROUND=======================
+// =================CLOSE WHEN CLICK ARROUND==================
 
 window.addEventListener('click', windowClose);
 
@@ -89,39 +77,4 @@ refs.logoutAccount.addEventListener('click', logOut);
 function logOut() {
   refs.modalBackdropMyAccount.style.display = 'none';
   refs.btnOpenModal.style.display = 'none';
-}
-
-// =====================ANIMATION=====================
-
-function animationOpenModal() {
-  refs.accountWrapper.classList.add('animate__animated', 'animate__fadeInDown');
-}
-
-function animationCloseModal() {
-  refs.accountWrapper.classList.remove(
-    'animate__animated',
-    'animate__fadeInDown',
-  );
-}
-
-function animationOpenFavorites() {
-  refs.selectedGoodsInner.classList.add(
-    'animate__animated',
-    'animate__backInDown',
-  );
-}
-
-function animationCloseFavorites() {
-  refs.selectedGoodsInner.classList.remove(
-    'animate__animated',
-    'animate__backInDown',
-  );
-}
-
-function animationOpenMyAds() {
-  refs.myAdsInner.classList.add('animate__animated', 'animate__backInDown');
-}
-
-function animationCloseMyAds() {
-  refs.myAdsInner.classList.remove('animate__animated', 'animate__backInDown');
 }
