@@ -1,5 +1,10 @@
 export const refs = {
   btnOpenModal: document.querySelector('.account-btn'),
+  hbsUserAvatar: document.querySelector('.js-avatar'),
+  hbsUserInfo: document.querySelector('.user-info'),
+  userFavoritesList: document.querySelector('.selected-goods__list'),
+  userAdsList: document.querySelector('.my-ads__list'),
+
   openFavorites: document.querySelector('.account-list__favorites'),
   openMyAds: document.querySelector('.account-list__advertisement'),
 
@@ -20,7 +25,10 @@ export const refs = {
   myAdsInner: document.querySelector('.my-ads__inner'),
 
   fileInput: document.querySelector('.user-avatar__file-input'),
-  avatarImg: document.querySelectorAll('.js-avatar'),
+  // avatarImg: document.querySelectorAll('.avatar'),
   addAvatarBtn: document.querySelector('.user-avatar__add-btn'),
   clearAvatarBtn: document.querySelector('.user-avatar__clear-btn'),
+
+  favoritesValue: document.querySelector('.js-counter__heart'),
+  myAdsValue: document.querySelector('.js-counter__add'),
 };

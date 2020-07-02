@@ -1,4 +1,12 @@
 import { refs } from './refs';
+
+import {
+  murkupUserAvatar,
+  murkupUserInfo,
+  murkupFavoritesGoods,
+  murkupMyAds,
+} from './markup-account';
+
 import {
   animationOpenModal,
   animationCloseModal,
@@ -15,17 +23,21 @@ refs.openFavorites.addEventListener('click', openFavorites);
 refs.openMyAds.addEventListener('click', openMyAds);
 
 function btnOpenModal() {
+  murkupUserAvatar();
+  murkupUserInfo();
   refs.modalBackdropMyAccount.style.display = 'block';
   animationOpenModal();
 }
 
 function openFavorites() {
+  murkupFavoritesGoods();
   refs.modalBackdropMyAccount.style.display = 'none';
   refs.modalBackdropFavorites.style.display = 'block';
   animationOpenFavorites();
 }
 
 function openMyAds() {
+  murkupMyAds();
   refs.modalBackdropMyAccount.style.display = 'none';
   refs.modalBackdropMyAds.style.display = 'block';
   animationOpenMyAds();

@@ -308,10 +308,12 @@
   font-size: 16px;
   margin-left: 35px;
   padding-left: 40px;
+  border: none;
+  background-color: transparent;
   transition: 0.4s ease-in-out;
 }
 
-/* MODAL OF ACCAUNT FAVORITE GOODS AND MY ADS (advertisement) */
+/* MODAL OF ACCOUNT FAVORITE GOODS AND MY ADS (advertisement) */
 
 .selected-goods__inner,
 .my-ads__inner {
@@ -391,7 +393,8 @@
   color: #e96105;
 }
 
-.selected-goods__item-desc {
+.selected-goods__item-desc,
+.my-ads__item-desc {
   display: none;
   font-family: 'MontserratLight', sans-serif;
   font-size: 13px;
@@ -527,7 +530,8 @@
     margin: 0;
   }
 
-  .selected-goods__item-block__info {
+  .selected-goods__item-block__info,
+  .my-ads__item-block__info {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -536,7 +540,8 @@
     padding-left: 20px;
   }
 
-  .selected-goods__item-desc {
+  .selected-goods__item-desc,
+  .my-ads__item-desc {
     display: block;
   }
 
@@ -586,7 +591,8 @@
     margin: 0;
   }
 
-  .selected-goods__item-block__info {
+  .selected-goods__item-block__info,
+  .my-ads__item-block__info {
     padding-left: 40px;
   }
 
@@ -597,7 +603,8 @@
     font-size: 16px;
   }
 
-  .selected-goods__item-desc {
+  .selected-goods__item-desc,
+  .my-ads__item-desc {
     display: block;
     font-size: 14px;
   }

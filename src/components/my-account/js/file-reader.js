@@ -8,15 +8,17 @@ function hendleChange(e) {
   const reader = new FileReader();
 
   reader.onloadend = () => {
-    refs.avatarImg.forEach(img => (img.src = reader.result));
+    document
+      .querySelectorAll('.avatar')
+      .forEach(img => (img.src = reader.result));
   };
 
   file ? reader.readAsDataURL(file) : (refs.avatarImg.src = '');
 }
 
 function resetForDefault() {
-  const srcDefault = './components/my-accaunt/avatar-img/default.png';
-  refs.avatarImg.forEach(img => (img.src = srcDefault));
+  const srcDefault = 'https://i.ibb.co/K7j3rZk/99-512.png'; // change default static img for server img
+  document.querySelectorAll('.avatar').forEach(img => (img.src = srcDefault));
 }
 
 // =======================LOCALSTORAGE=======================
