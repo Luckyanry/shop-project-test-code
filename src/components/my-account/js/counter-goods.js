@@ -1,8 +1,5 @@
 import { refs } from './refs';
-import {
-  animationRemoveItem,
-  animationRemoveItemClose,
-} from './account-animation.js';
+import { animateCSS } from './account-animation.js';
 
 function removeFavorites() {
   refs.userFavoritesList.children.forEach(item =>
@@ -19,16 +16,14 @@ function removeUserAds() {
 function removeFavoritesItem(e) {
   if (e.target.nodeName !== 'SPAN') return;
   e.currentTarget.remove();
+  // animateCSS();
 
-  animationRemoveItem();
   refs.favoritesValue.textContent = refs.userFavoritesList.childElementCount;
 }
 
 function removeAdsItem(e) {
   if (e.target.nodeName !== 'SPAN') return;
   e.currentTarget.remove();
-
-  animationRemoveItem();
 
   refs.myAdsValue.textContent = refs.userAdsList.childElementCount;
 }

@@ -7,8 +7,31 @@ import { removeFavorites, removeUserAds } from './counter-goods';
 
 import { refs } from './refs';
 
+// export function isLogIn() {
+//   if (localStorage.getItem('user-info')) {
+//     const localUserId = JSON.parse(localStorage.getItem('user-info')).userId;
+
+//     getUserInfo(localUserId).then(res => {
+//       // if (window.matchMedia('(max-width: 767px)').matches) {
+//       //   markupIncomeBtnMobile(res.data);
+//       // } else {
+//       //   markupIncomeBtn(res.data);
+//       // }
+//       markupIncomeBtnMobile(res.data);
+
+//       signOutForm = document.querySelector('.auth-form-sign-out');
+//       signOutForm.addEventListener('click', hendelSignOut);
+//       // signOutForm[1].addEventListener('click', hendelSignOut);
+//     });
+//   } else {
+//     signInUpDiv.innerHTML = `${signInUp()}`;
+//     signInUpDivMob.innerHTML = `${signInUp()}`;
+//   }
+// }
+// isLogIn();
+
 function markupIncomeBtn() {
-  refs.btnOpenModal.insertAdjacentHTML('beforeend', incomeBtn());
+  refs.btnOpenModal.insertAdjacentHTML('beforeend', incomeBtn()); // ======= btn
 }
 markupIncomeBtn();
 

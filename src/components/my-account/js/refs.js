@@ -1,5 +1,5 @@
 export const refs = {
-  btnOpenModal: document.querySelector('.account-btn'),
+  btnOpenModal: document.querySelector('.account-btn'), // ============ btn
   hbsUserAvatar: document.querySelector('.js-avatar'),
   hbsUserInfo: document.querySelector('.user-info'),
   userFavoritesList: document.querySelector('.selected-goods__list'),
