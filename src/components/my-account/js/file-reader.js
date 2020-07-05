@@ -21,63 +21,36 @@ function resetForDefault() {
   document.querySelectorAll('.avatar').forEach(img => (img.src = srcDefault));
 }
 
-// =======================LOCALSTORAGE=======================
+// import { updateUserAvatar } from '../../services/user-api';
 
-// const fileForm = document.forms.fileForm;
+// export function avatarManipulation() {
+//   const fileInput = document.querySelector('.user-avatar__file-input');
+//   const clearAvatarBtn = document.querySelector('.user-avatar__clear-btn');
 
-// function toDataURL(element) {
-//   return new Promise(resolve => {
-//     const reader = new FileReader();
-
-//     reader.onloadend = () => resolve(reader.result);
-//     reader.readAsDataURL(element.files[0]);
-//   });
+//   fileInput.addEventListener('change', hendleChange);
+//   clearAvatarBtn.addEventListener('click', resetForDefault);
 // }
 
-// const createbase = e => {
-//   e.preventDefault();
+// function hendleChange(e) {
+//   const file = e.target.files[0];
+//   const reader = new FileReader();
+//   const imgSearche = document.querySelectorAll('.avatar');
 
-//   const element = fileForm.elements.fileFormInput;
+//   reader.onloadend = () => {
+//     imgSearche.forEach(img => (img.src = reader.result));
 
-//   toDataURL(element).then(data => {
-//     const localUserId = JSON.parse(localStorage.getItem('user-info')).userId;
-//     updateUserAvatar(localUserId, data);
-//   });
-// };
+//     const localUserObj = JSON.parse(localStorage.getItem('user-info'));
+//     updateUserAvatar(localUserObj.userId, reader.result, localUserObj.token);
+//   };
 
-// fileForm.addEventListener('submit', createbase);
-
-// function userInfo() {
-//   if (localStorage.getItem('user-info')) {
-//     const localUserId = JSON.parse(localStorage.getItem('user-info')).userId;
-//     getUserInfo(localUserId).then(res => showUserInfo(res.data));
-//   }
-// }
-// userInfo();
-
-// function showUserInfo(obj) {
-//   userInfoHtml.innerHTML = `Здравствуйте: ${obj.firstName} ${obj.secondName}. Эмейл: ${obj.email}. Телефон: ${obj.phone}`;
-//   if (obj.avatar) {
-//     resultIMG.src = obj.avatar;
-//   }
+//   file ? reader.readAsDataURL(file) : resetForDefault();
 // }
 
-// localStorage.setItem(
-//   'user-info',
-//   JSON.stringify({
-//     userId: foundUser.userId,
-//     email: res.data.email,
-//     // token: res.data.idToken,
-//   }),
-// );
+// function resetForDefault() {
+//   const srcDefault = 'https://i.ibb.co/K7j3rZk/99-512.png';
 
-// testLog();
-// function testLog() {
-//   setTimeout(() => {
-//     if (localStorage.getItem('user-info')) {
-//       console.log('i am login');
-//     } else {
-//       console.log('i am not login');
-//     }
-//   }, 1000);
+//   document.querySelectorAll('.avatar').forEach(img => (img.src = srcDefault));
+
+//   const localUserObj = JSON.parse(localStorage.getItem('user-info'));
+//   updateUserAvatar(localUserObj.userId, srcDefault, localUserObj.token);
 // }
